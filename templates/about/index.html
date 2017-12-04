@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>南风喃 - 关于</title>
+    {% load static %}
+    {% include 'common/static.html' %}
+</head>
+<body id="top">
+{% include 'common/header.html' %}
+<!-- Content -->
+<section id="content-wrap" class="blog-single">
+    <div class="row">
+        <div class="col-twelve">
+            <article class="format-gallery">
+                <div class="content-media">
+                    <div class="post-slider flexslider">
+                        <ul class="slides">
+                            {% for img in data.model.split2list %}
+                                {% if img %}
+                                    <li>
+                                        <img src="{{ img }}" alt="南风喃 - about">
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="primary-content">
+                    <h1 class="entry-title">{{ data.model.title }}</h1>
+                    <p class="lead">{{ data.model.leading }}</p>
+                    {% autoescape off %}
+                        <p>{{ data.model.content }}</p>
+                    {% endautoescape %}
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% include 'common/footer.html' %}
+{% include 'common/static-footer.html' %}
+</body>
+</html>

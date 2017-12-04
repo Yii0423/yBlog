@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>南风喃 - 随笔</title>
+    {% load static %}
+    {% include 'common/static.html' %}
+    <script type="text/javascript">
+        $(function () {
+            //默认选中菜单
+            $('.pagination a:eq(0)').addClass('current');
+            $('.pagination a').each(function () {
+                var link = $(this).attr("href");
+                if (window.location.href.indexOf(link) > -1) {
+                    $(this).addClass('current').siblings().removeClass('current');
+                }
+            });
+        });
+    </script>
+</head>
+<body id="top">
+{% include 'common/header.html' %}
+<!-- Category -->
+<section id="page-header">
+    <div class="row">
+        <nav class="pagination">
+            {% for category in data.category %}
+                <a href="/essay/{{ category.key }}/" class="page-numbers" title="{{ category.remarks }}"
+                   hint="230px">{{ category.value }}</a>
+            {% endfor %}
+        </nav>
+    </div>
+</section>
+<!-- Content -->
+<section id="bricks" class="with-top-sep">
+    <div class="row masonry">
+        <div class="bricks-wrapper">
+            <div class="grid-sizer"></div>
+            {% for model in data.list %}
+                {% if model.typeid == 12 %}
+                    <!-- audio -->
+                    <article class="brick entry format-audio animate-this">
+                        <div class="entry-thumb">
+                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                            </a>
+                            <div class="audio-wrap">
+                                <audio id="player2" src="{{ model.clearfiles }}" width="100%"
+                                       height="42" controls="controls"></audio>
+                            </div>
+                        </div>
+                        <div class="entry-text">
+                            <div class="entry-header">
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                            </div>
+                            <div class="entry-excerpt">{{ model.seodescription }}</div>
+                        </div>
+                    </article>
+                {% elif model.typeid == 13 %}
+                    <!-- image -->
+                    <article class="brick entry format-standard animate-this">
+                        <div class="entry-thumb">
+                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                            </a>
+                        </div>
+                        <div class="entry-text">
+                            <div class="entry-header">
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                            </div>
+                            <div class="entry-excerpt">{{ model.seodescription }}</div>
+                        </div>
+                    </article>
+                {% elif model.typeid == 14 %}
+                    <!-- images -->
+                    <article class="brick entry format-gallery group animate-this">
+                        <div class="entry-thumb">
+                            <div class="post-slider flexslider">
+                                <ul class="slides">
+                                    {% for img in model.split2list %}
+                                        {% if img %}
+                                            <li>
+                                                <img src="{{ img }}" alt="南风喃 - essay" style="width:100%"/>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entry-text">
+                            <div class="entry-header">
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                            </div>
+                            <div class="entry-excerpt">{{ model.seodescription }}</div>
+                        </div>
+                    </article>
+                {% elif model.typeid == 16 %}
+                    <!-- text -->
+                    <article class="brick entry format-quote animate-this">
+                        <div class="entry-thumb">
+                            <blockquote>
+                                <p>{{ model.seodescription }}</p>
+                                <cite>{{ model.sources }}</cite>
+                            </blockquote>
+                        </div>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% include 'common/footer.html' %}
+{% include 'common/static-footer.html' %}
+</body>
+</html>

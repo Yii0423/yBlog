@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 登录</title>
+    {% include 'admin/common/static.html' %}
+    <script>
+        $(function () {
+            loadCode();
+            layui.use('form', function () {
+                var form = layui.form;
+                form.on('submit(formDemo)', function (data) {
+                    ajax('post', '/admin/api/login/', {'data': JSON.stringify(data.field)}, function (data) {
+                        if (data['result'] === 'success') window.location.href = '/admin/';
+                        else layer.msg(data['result'], {time: 2000});
+                    });
+                    return false;
+                });
+            });
+        });
+
+        //获取验证码
+        function loadCode() {
+            ajax('get', '/admin/api/get_code/', {}, function (data) {
+                if (data['result'] === 'success') $('#login_code').attr('src', $('#login_code').attr('data_src') + '?r=' + Math.random());
+            });
+        }
+    </script>
+</head>
+{% load static %}
+<body style="background:url('{% static 'admin/images/cms-bg.jpg' %}') no-repeat center top;overflow:hidden">
+<div class="login fadeInDownSmall animated">
+    <form class="layui-form layui-form-pane" action="">
+        <img class="margin-bottom-default" src="{% static 'admin/images/cms-logo.png' %}" alt="yii's blog"/>
+        <div class="layui-form-item">
+            <div class="layui-input-block margin-clear">
+                <input type="text" name="account" required lay-verify="required" placeholder="请输入邮箱/手机号"
+                       autocomplete="off" autofocus class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block margin-clear">
+                <input type="password" name="pwd" required lay-verify="required" placeholder="请输入密码"
+                       autocomplete="off" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-inline margin-clear">
+                <input type="text" name="code" required lay-verify="required" placeholder="请输入验证码"
+                       autocomplete="off" class="layui-input"/>
+            </div>
+            <img id="login_code" data_src="{% static 'admin/images/code.jpg' %}"
+                 alt="login code" title="单击更换验证码" onclick="loadCode()"/>
+        </div>
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即登录</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

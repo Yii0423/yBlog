@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{ data.model.seodescription }}">
+    <meta name="keywords" content="南风喃,essay,{{ data.model.seokeywords }}">
+    <meta name="author" content="{{ data.model.sources }}">
+    <title>南风喃 - {{ data.model.seotitle }}</title>
+    {% load static %}
+    {% include 'common/static.html' %}
+</head>
+<body id="top">
+{% include 'common/header.html' %}
+<!-- Content -->
+<section id="content-wrap" class="blog-single">
+    <div class="row">
+        <div class="col-twelve">
+            <article class="format-gallery">
+                <div class="primary-content">
+                    <h1 class="entry-title">{{ data.model.seotitle }}</h1>
+                    <ul class="entry-meta">
+                        <li class="date">{{ data.model.create|date:"Y-m-d H:i:s" }}</li>
+                        <li class="cat">{{ data.model.seokeywords }}</li>
+                    </ul>
+                    {% autoescape off %}
+                        {{ data.model.remarks }}
+                    {% endautoescape %}
+                </div> <!-- end entry-primary -->
+                {% if data.model.categoryid == 3 or data.model.categoryid == 4 %}
+                    <div class="pagenav group">
+                        <div class="prev-nav" style="width:auto">
+                            <button type="button" class="button button-primary" style="font-size:23px">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ data.model.agrees }}
+                            </button>
+                        </div>
+                        <div class="next-nav" style="width:auto">
+                            <button type="button" class="button" style="font-size:18px">
+                                <i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ data.model.disagrees }}
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+            </article>
+        </div> <!-- end col-twelve -->
+    </div> <!-- end row -->
+    <div class="comments-wrap">
+        <div id="comments" class="row">
+            <div class="col-full">
+                <h3>共0条回复</h3>
+                <!-- respond -->
+                <div class="respond">
+                    <form name="contactForm" id="contactForm" method="post" action="">
+                        <fieldset>
+                            <div class="message form-field">
+                                <textarea name="cMessage" id="cMessage" class="full-width"
+                                          placeholder="说点什么吧"></textarea>
+                            </div>
+                            <button type="submit" class="submit button-primary"
+                                    onclick="alert('评论功能建设中...');return false;">发表评论
+                            </button>
+                        </fieldset>
+                    </form> <!-- Form End -->
+                </div> <!-- Respond End -->
+            </div> <!-- end col-full -->
+        </div> <!-- end row comments -->
+    </div> <!-- end comments-wrap -->
+</section> <!-- end content -->
+{% include 'common/footer.html' %}
+{% include 'common/static-footer.html' %}
+</body>
+</html>

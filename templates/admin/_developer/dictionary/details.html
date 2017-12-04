@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 字典表管理 - 编辑</title>
+    {% include 'admin/common/static.html' %}
+    <script type="text/javascript">
+        $(function () {
+            if ('{{ data.model.pid }}' != '') $("[name=pid]").val('{{ data.model.pid }}');
+            layui.use('form', function () {
+                var form = layui.form;
+                form.on('submit(formDemo)', function (data) {
+                    $(this).pag_edit({
+                        type: 'post',
+                        url_edit: '/admin/api/edit_dict/',
+                        params: {'model': JSON.stringify(data.field)}
+                    });
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="layui-container margin-default">
+    <form class="layui-form layui-form-pane" action="">
+        <input type="text" name="pk" value="{{ data.model.pk }}" hidden/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*父类型</label>
+            <div class="layui-input-block">
+                <select name="pid" lay-verify="required">
+                    <option value="0">顶级类型</option>
+                    {% for type in data.type %}
+                        <option value="{{ type.id }}">{{ type.value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">键</label>
+            <div class="layui-input-block">
+                <input type="text" name="key" placeholder="请输入键" autocomplete="off"
+                       class="layui-input" value="{{ data.model.key }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*值</label>
+            <div class="layui-input-block">
+                <input type="text" name="value" required lay-verify="required" placeholder="请输入值" autocomplete="off"
+                       class="layui-input" value="{{ data.model.value }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">序号</label>
+            <div class="layui-input-block">
+                <input type="number" name="sort" placeholder="请输入序号(值越小排名越靠前)"
+                       required lay-verify="required" autocomplete="off" class="layui-input"
+                       value="{{ data.model.sort }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea name="remarks" placeholder="请输入备注" class="layui-textarea">{{ data.model.remarks }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

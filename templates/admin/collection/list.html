@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 收藏</title>
+    {% include 'admin/common/static.html' %}
+    {% load static %}
+    <script src="{% static 'admin/js/collectionmanage.js' %}" type="text/javascript"></script>
+</head>
+<body>
+{% include 'admin/common/header.html' %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 margin-default">
+            <div class="layui-elem-path">
+                <span class="layui-breadcrumb">
+                    <a href="/admin/"><i class="layui-icon">&#xe600;</i> 首页</a>
+                    <a><cite><i class="layui-icon">&#xe620;</i> 收藏</cite></a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h2 class="pull-left">收藏</h2>
+                    <div class="box-deal">
+                        <div class="layui-btn-group">
+                            <button class="layui-btn layui-btn-small" data-type="pag_add">
+                                <i class="layui-icon">&#xe654;</i>
+                            </button>
+                            <button class="layui-btn layui-btn-small" data-type="pag_delete">
+                                <i class="layui-icon">&#xe640;</i>
+                            </button>
+                            <button class="layui-btn layui-btn-small" data-type="pag_modify">
+                                <i class="layui-icon">&#xe642;</i>
+                            </button>
+                            <button class="layui-btn layui-btn-small pag-select">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="layui-form form-table">
+                        <table class="layui-table margin-clear"></table>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div id="pagination" class="text-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

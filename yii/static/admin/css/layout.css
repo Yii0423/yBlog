@@ -1,0 +1,275 @@
+/* diy css */
+.margin-default {
+    margin: 15px 0;
+}
+
+.margin-top-default {
+    margin-top: 15px;
+}
+
+.margin-left-default {
+    margin-left: 5px;
+}
+
+.margin-right-default {
+    margin-right: 5px;
+}
+
+.margin-bottom-default {
+    margin-bottom: 15px;
+}
+
+.margin-clear {
+    margin: 0 !important;
+}
+
+.padding-default {
+    padding: 15px 0;
+}
+
+.padding-clear {
+    padding: 0 !important;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.layui-elem-path {
+    padding: 10px;
+    border-left: 3px solid #5FB878;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-table {
+    min-height: 430px;
+}
+
+.login {
+    margin: 10% auto;
+    padding: 25px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+    .login {
+        margin: 100px auto;
+    }
+}
+
+.login #login_code {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+@media only screen and (max-width: 450px) {
+    .login #login_code {
+        margin: 15px 0 0 -3px;
+    }
+
+    .nav-login {
+        background-color: #393d49;
+        margin: 10px 0;
+        width: 100%;
+        border-radius: 4px;
+    }
+}
+
+.login > form {
+    margin-top: 15px;
+}
+
+.label {
+    display: inline;
+    margin-left: 5px;
+    padding: .4em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 4;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.layui-nav-user {
+    float: left;
+    padding: 0 15px;
+    line-height: 60px;
+    color: #fff;
+}
+
+.layui-nav-user:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.layui-nav-user > img {
+    width: 32px;
+    height: 32px;
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.box.box-primary {
+    border-top-color: #3c8dbc;
+}
+
+.label-primary {
+    background-color: #3c8dbc;
+}
+
+.text-primary {
+    color: #3c8dbc;
+}
+
+.box.box-success {
+    border-top-color: #00a65a;
+}
+
+.label-success {
+    background-color: #00a65a;
+}
+
+.text-success {
+    color: #00a65a;
+}
+
+.box.box-info {
+    border-top-color: #00c0ef;
+}
+
+.label-info {
+    background-color: #00c0ef;
+}
+
+.text-info {
+    color: #00c0ef;
+}
+
+.box.box-danger {
+    border-top-color: #dd4b39;
+}
+
+.label-danger {
+    background-color: #dd4b39;
+}
+
+.text-danger {
+    color: #dd4b39;
+}
+
+.box.box-warning {
+    border-top-color: #f39c12;
+}
+
+.label-warning {
+    background-color: #f39c12;
+}
+
+.text-warning {
+    color: #f39c12;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.box-deal {
+    margin-top: 5px;
+    text-align: right;
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.box-body {
+    padding: 10px;
+}
+
+.box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.layui-nav {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.files {
+    display: inline-block;
+    min-height: 430px;
+}
+
+.files > .file {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid #f4f4f4;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    word-break: break-all;
+    float: left;
+    cursor: pointer;
+}
+
+.files > .file > div > p.filename {
+    max-height: 32px;
+    overflow: hidden;
+}
+
+.files > .file:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.files > .file > div > p > .layui-icon {
+    font-size: 36px;
+    color: #bbb;
+}
+
+.noscroll > .layui-layer-content {
+    overflow: hidden !important;
+}
+
+.layui-upload-button {
+    cursor: pointer;
+}

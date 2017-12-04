@@ -1,0 +1,72 @@
+<!-- footer -->
+<footer>
+    <div class="footer-main">
+        <div class="row">
+            <div class="col-four tab-full mob-full footer-info">
+                <h4>最新动态</h4>
+                <ul>
+                    {% for essay in data.foot_essay %}
+                        <li>
+                            <a href="/essay/{{ essay.id }}"
+                               title="南风喃 - 随笔 - {{ essay.seotitle }}">[随笔] {{ essay.shorttitle }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if data.foot_collection is not None and data.foot_collection.title %}
+                        <li>
+                            <a href="/collection/" title="南风喃 - 收藏 - {{ data.foot_collection.title }}">
+                                [收藏] {{ data.foot_collection.shorttitle }}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div> <!-- end footer-info -->
+            <div class="col-two tab-1-3 mob-1-2 site-links">
+                <h4>导航</h4>
+                <ul>
+                    <li><a href="/" title="">首页</a></li>
+                    <li><a href="/essay/" title="">随笔</a></li>
+                    <li><a href="/collection/" title="">收藏</a></li>
+                    <li><a href="/feedback/" title="">留言板</a></li>
+                    <li><a href="/about/" title="">关于</a></li>
+                </ul>
+            </div> <!-- end site-links -->
+            <div class="col-two tab-1-3 mob-1-2 social-links">
+                <h4>友情链接</h4>
+                <ul>
+                    {% for friendlink in data.foot_friendlink %}
+                        <li>
+                            <a href="{{ friendlink.url }}" target="_blank"
+                               title="{{ friendlink.remarks }}">{{ friendlink.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div> <!-- end social links -->
+            <div class="col-four tab-1-3 mob-full footer-subscribe">
+                <h4>留言</h4>
+                <p>说点什么或者帮忙分享一下呗~</p>
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="dEmail" class="email" id="mc-email"
+                               placeholder="输入内容然后回车" required="" autocomplete="off"/>
+                        <input type="submit" name="subscribe" onclick="alert('留言功能建设中...');return false;"/>
+                        <label for="mc-email" class="subscribe-message"></label>
+                    </form>
+                </div>
+            </div> <!-- end subscribe -->
+        </div> <!-- end row -->
+    </div> <!-- end footer-main -->
+    <div class="footer-bottom">
+        <div class="row">
+            <div class="col-twelve">
+                <div class="copyright">
+                    <a href="http://bemyself.cn">南风喃</a>
+                </div>
+                <div id="go-top">
+                    <a class="smoothscroll" title="返回顶部" href="#top"><i class="icon icon-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end footer-bottom -->
+</footer> <!-- end footer -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>

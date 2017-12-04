@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>南风喃 - 收藏</title>
+    {% load static %}
+    {% include 'common/static.html' %}
+</head>
+<body id="top">
+{% include 'common/header.html' %}
+<!-- Content -->
+<section id="bricks" class="with-top-sep">
+    <div class="row masonry">
+        <div class="bricks-wrapper">
+            <div class="grid-sizer"></div>
+            {% for model in data.list %}
+                {% if model.imagesurl %}
+                    <!-- image -->
+                    <article class="brick entry format-standard animate-this">
+                        <div class="entry-thumb">
+                            <a href="{{ model.url }}?from=bemyself.cn" class="thumb-link" target="_blank">
+                                <img src="{{ model.clearimages }}" alt="南风喃 - collection - image"/>
+                            </a>
+                        </div>
+                        <div class="entry-text">
+                            <div class="entry-header">
+                                <h1 class="entry-title">
+                                    <a href="{{ model.url }}" target="_blank">{{ model.title }}</a></h1>
+                            </div>
+                            <div class="entry-excerpt">{{ model.remarks }}</div>
+                        </div>
+                    </article>
+                {% else %}
+                    <!-- text -->
+                    <article class="brick entry format-quote animate-this">
+                        <a href="{{ model.url }}">
+                            <div class="entry-thumb">
+                                <blockquote>
+                                    <p>{{ model.remarks }}</p>
+                                    <cite>{{ model.title }}</cite>
+                                </blockquote>
+                            </div>
+                        </a>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% include 'common/footer.html' %}
+{% include 'common/static-footer.html' %}
+</body>
+</html>

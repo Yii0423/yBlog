@@ -1,0 +1,15 @@
+{% load static %}
+<!-- Favicons -->
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<!-- Css -->
+<link href="{% static 'admin/css/animate.css' %}" type="text/css" rel="stylesheet"/>
+<link href="{% static 'admin/css/layui.css' %}" type="text/css" rel="stylesheet"/>
+<link href="{% static 'admin/css/layout.css' %}" type="text/css" rel="stylesheet"/>
+<!-- Js -->
+<script src="{% static 'admin/js/jquery.min.js' %}"></script>
+<script src="{% static 'admin/layui.js' %}" type="text/javascript"></script>
+<script src="{% static 'admin/js/common.js' %}" type="text/javascript"></script>
+<script type="text/javascript">
+    layui.config({base: '{% static 'admin/js/' %}'}).use('index');
+</script>

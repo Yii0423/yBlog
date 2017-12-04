@@ -1,2 +1,2 @@
 # yBlog
-personal blog
+http://bemyself.cn

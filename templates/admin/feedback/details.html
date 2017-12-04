@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 留言板 - 编辑</title>
+    {% include 'admin/common/static.html' %}
+    <script type="text/javascript">
+        $(function () {
+            layui.use('form', function () {
+                var form = layui.form;
+                form.on('submit(formDemo)', function (data) {
+                    $(this).pag_edit({
+                        type: 'post',
+                        url_edit: '/admin/api/edit_feedback/',
+                        params: {'model': JSON.stringify(data.field)}
+                    });
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="layui-container margin-default">
+    <form class="layui-form layui-form-pane" action="">
+        <input type="text" name="pk" value="{{ data.model.pk }}" hidden/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">留言人IP</label>
+            <div class="layui-input-block">
+                <input type="text" name="ip" autocomplete="off" readonly class="layui-input"
+                       value="{{ data.model.ip }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-block">
+                <textarea name="content" readonly class="layui-textarea">{{ data.model.content }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">回复</label>
+            <div class="layui-input-block">
+                <textarea name="replycontent" placeholder="请输入回复"
+                          class="layui-textarea">{{ data.model.replycontent }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

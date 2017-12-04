@@ -1,0 +1,31 @@
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="/admin/">首页</a></li>
+    <li class="layui-nav-item"><a href="/admin/essay/">随笔</a></li>
+    <li class="layui-nav-item"><a href="/admin/collection/">收藏</a></li>
+    <li class="layui-nav-item"><a href="/admin/feedback/">留言板</a></li>
+    <li class="layui-nav-item"><a href="/admin/about/">关于</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:">控制面板</a>
+        <dl class="layui-nav-child">
+            <dd><a href="/admin/_developer/dict/">字典表管理</a></dd>
+            <dd><a href="/admin/_developer/files/">文件管理</a></dd>
+        </dl>
+    </li>
+    {% if request.session.nickname %}
+        <li class="pull-right nav-login">
+            {% load static %}
+            <a class="layui-nav-user">
+                <img src="{% static 'admin/images/default-avatar.png' %}" alt="cms user avatar"
+                     class="margin-right-default">
+                {{ request.session.nickname }}
+                <button class="layui-btn layui-btn-small layui-btn-danger margin-left-default"
+                        onclick="layer.confirm('确认退出系统?', {title: '退出前确认',offset:'250px'},
+                         function () {window.location.href='/admin/login'})">
+                    退出系统
+                </button>
+            </a>
+        </li>
+    {% else %}
+        <script>window.location.href = '/admin/login/';</script>
+    {% endif %}
+</ul>
