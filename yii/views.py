@@ -44,7 +44,7 @@ def webs(request, type='', id=''):
                 category = Dictionary.objects.filter(pid=1, isdel=False)
                 dlist = Essay.objects.filter(categoryid=Dictionary.objects.get(key=id).pk, isdel=False).order_by(
                     '-modify')
-                data = {'category': category, 'list': dlist[:100]}
+                data = {'category': category, 'list': dlist[:10], 'id': id}
                 break
             if case('essay') and id.isdigit():
                 url = 'essay/details.html'
@@ -59,7 +59,7 @@ def webs(request, type='', id=''):
                     select={
                         'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`'
                     }).order_by('-modify')
-                data = {'list': dlist[:100]}
+                data = {'list': dlist[:10]}
                 break
             if case('feedback'):
                 url = 'feedback/index.html'
@@ -70,7 +70,7 @@ def webs(request, type='', id=''):
                 break
         if type == '':
             data['index_about'] = About.objects.get(pk=1)
-            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('sort')[:23]
+            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('sort')[:10]
         # 页脚数据
         data['foot_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-visits')[:4]
         data['foot_collection'] = Collection.objects.filter(~Q(typeid=9), isdel=False).order_by('-visits')[0]
@@ -145,7 +145,7 @@ def admin(request, type='admin', id=-1):
 
 # 接口
 def api(request, type='login'):
-    if type != 'login' and type != 'get_code' and not request.session.get('nickname'):
+    if type != 'login' and type != 'get_code' and 'select' not in type and not request.session.get('nickname'):
         return HttpResponse(json.dumps({"result": 'no user login'}), content_type='application/json')
     result = None
     try:
@@ -261,7 +261,11 @@ def api(request, type='login'):
             if case('select_essay'):
                 page = request.GET.get('page')
                 limit = request.GET.get('limit')
-                data = Essay.objects.filter(isdel=False).extra(
+                categoryid = request.GET.get('categoryid')
+                data = Essay.objects.filter(isdel=False)
+                if categoryid is not None:
+                    data = data.filter(categoryid=categoryid)
+                data = data.extra(
                     select={
                         'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`',
                         'category': 'SELECT `value` FROM yii_dictionary WHERE `id` = `categoryid`'

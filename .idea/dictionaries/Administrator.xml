@@ -8,6 +8,7 @@
       <w>autoplay</w>
       <w>autouploads</w>
       <w>bemyself</w>
+      <w>bootcss</w>
       <w>categoryid</w>
       <w>categoryname</w>
       <w>clearfiles</w>
@@ -28,13 +29,16 @@
       <w>friendlink</w>
       <w>imagesurl</w>
       <w>imageurl</w>
+      <w>imgs</w>
       <w>instagram</w>
       <w>isdel</w>
       <w>jrtt</w>
       <w>khtml</w>
       <w>layedit</w>
       <w>laypage</w>
+      <w>loadingmore</w>
       <w>mailchimp</w>
+      <w>minigrid</w>
       <w>modernizr</w>
       <w>mzga</w>
       <w>noscroll</w>
@@ -54,6 +58,7 @@
       <w>spiderid</w>
       <w>submint</w>
       <w>superfish</w>
+      <w>templ</w>
       <w>templet</w>
       <w>textarea</w>
       <w>tipso</w>

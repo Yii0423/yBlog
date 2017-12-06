@@ -2672,23 +2672,19 @@ footer ul li {
  * ------------------------------------------------------------------- */
 #go-top {
     position: fixed;
+    cursor: pointer;
+    display: none;
     bottom: 24px;
     right: 30px;
     z-index: 700;
-    display: none;
-}
-
-#go-top a {
     text-decoration: none;
     border: 0 none;
-    display: block;
     height: 63px;
     width: 60px;
     line-height: 63px;
     text-align: center;
     background: #b5b5b5;
     color: #555;
-    text-align: center;
     text-transform: uppercase;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -2697,18 +2693,18 @@ footer ul li {
     transition: all 0.3s ease-in-out;
 }
 
-#go-top a i {
+#go-top i {
     font-size: 24px;
     line-height: inherit;
 }
 
-#go-top a:visited {
+#go-top:visited {
     background: #b5b5b5;
     color: #555;
 }
 
-#go-top a:hover,
-#go-top a:focus {
+#go-top:hover,
+#go-top:focus {
     background: #000000;
     color: #FFFFFF;
 }

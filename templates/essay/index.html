@@ -7,8 +7,9 @@
     <!-- Basic needs -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="南风喃随笔">
+    <meta name="keywords" content="南风喃,blog,yii,essay">
+    <meta name="author" content="yii">
     <title>南风喃 - 随笔</title>
     {% load static %}
     {% include 'common/static.html' %}
@@ -48,7 +49,7 @@
                     <!-- audio -->
                     <article class="brick entry format-audio animate-this">
                         <div class="entry-thumb">
-                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                            <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
                                 <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
                             </a>
                             <div class="audio-wrap">
@@ -58,7 +59,8 @@
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -67,13 +69,14 @@
                     <!-- image -->
                     <article class="brick entry format-standard animate-this">
                         <div class="entry-thumb">
-                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                            <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
                                 <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
                             </a>
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -96,7 +99,8 @@
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -114,6 +118,11 @@
                 {% endif %}
             {% endfor %}
         </div>
+    </div>
+    <div class="row masonry text-center">
+        <button id="loadingMore" type="button" class="button full-width" style="max-width:230px;margin-top:100px"
+                onclick="getArticle('{{ data.id }}')">加载更多
+        </button>
     </div>
 </section>
 {% include 'common/footer.html' %}

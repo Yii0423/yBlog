@@ -14,7 +14,7 @@
     {% load static %}
     {% include 'common/static.html' %}
 </head>
-<body id="top">
+<body>
 {% include 'common/header.html' %}
 <!-- Content -->
 <section id="bricks">
@@ -46,7 +46,7 @@
                     <!-- audio -->
                     <article class="brick entry format-audio animate-this">
                         <div class="entry-thumb">
-                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                            <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
                                 <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
                             </a>
                             <div class="audio-wrap">
@@ -56,7 +56,8 @@
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -65,13 +66,14 @@
                     <!-- image -->
                     <article class="brick entry format-standard animate-this">
                         <div class="entry-thumb">
-                            <a href="/essay/{{ model.id }}" class="thumb-link">
+                            <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
                                 <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
                             </a>
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -94,7 +96,8 @@
                         </div>
                         <div class="entry-text">
                             <div class="entry-header">
-                                <h1 class="entry-title"><a href="/essay/{{ model.id }}">{{ model.seotitle }}</a></h1>
+                                <h1 class="entry-title"><a href="/essay/{{ model.id }}"
+                                                           target="_blank">{{ model.seotitle }}</a></h1>
                             </div>
                             <div class="entry-excerpt">{{ model.seodescription }}</div>
                         </div>
@@ -103,9 +106,13 @@
             {% endfor %}
         </div> <!-- end brick-wrapper -->
     </div> <!-- end row -->
+    <div class="row masonry text-center">
+        <button id="loadingMore" type="button" class="button full-width" style="max-width:230px;margin-top:100px"
+                onclick="getArticle('essay')">加载更多
+        </button>
+    </div>
 </section> <!-- end bricks -->
 {% include 'common/footer.html' %}
 {% include 'common/static-footer.html' %}
-<object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300" height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param></object>
 </body>
 </html>

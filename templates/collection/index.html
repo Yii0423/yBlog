@@ -7,8 +7,9 @@
     <!-- Basic needs -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="南风喃收藏">
+    <meta name="keywords" content="南风喃,blog,yii,collection">
+    <meta name="author" content="yii">
     <title>南风喃 - 收藏</title>
     {% load static %}
     {% include 'common/static.html' %}
@@ -16,7 +17,7 @@
 <body id="top">
 {% include 'common/header.html' %}
 <!-- Content -->
-<section id="bricks" class="with-top-sep">
+<section id="bricks">
     <div class="row masonry">
         <div class="bricks-wrapper">
             <div class="grid-sizer"></div>
@@ -52,6 +53,11 @@
                 {% endif %}
             {% endfor %}
         </div>
+    </div>
+    <div class="row masonry text-center">
+        <button id="loadingMore" type="button" class="button full-width" style="max-width:230px;margin-top:100px"
+                onclick="getArticle('collection')">加载更多
+        </button>
     </div>
 </section>
 {% include 'common/footer.html' %}
