@@ -7,7 +7,7 @@
                 <ul>
                     {% for essay in data.foot_essay %}
                         <li>
-                            <a href="/essay/{{ essay.id }}"
+                            <a href="/essay/{{ essay.id }}" target="_blank"
                                title="南风喃 - 随笔 - {{ essay.seotitle }}">[随笔] {{ essay.shorttitle }}</a>
                         </li>
                     {% endfor %}
@@ -42,13 +42,13 @@
             </div> <!-- end social links -->
             <div class="col-four tab-1-3 mob-full footer-subscribe">
                 <h4>留言</h4>
-                <p>说点什么或者帮忙分享一下呗~</p>
+                <p>网站初建,欢迎多多提意见~</p>
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" novalidate="true">
-                        <input type="email" value="" name="dEmail" class="email" id="mc-email"
+                        <input type="text" value="" class="email" id="txtFb"
                                placeholder="输入内容然后回车" required="" autocomplete="off"/>
-                        <input type="submit" name="subscribe" onclick="alert('留言功能建设中...');return false;"/>
-                        <label for="mc-email" class="subscribe-message"></label>
+                        <input id="btnFb" type="submit" name="subscribe"/>
+                        <label id="lblFb" class="subscribe-message"></label>
                     </form>
                 </div>
             </div> <!-- end subscribe -->

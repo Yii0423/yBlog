@@ -14,6 +14,7 @@
       <w>clearfiles</w>
       <w>clearimages</w>
       <w>clearsign</w>
+      <w>cname</w>
       <w>collectionmanage</w>
       <w>commentlist</w>
       <w>dest</w>
@@ -42,6 +43,7 @@
       <w>modernizr</w>
       <w>mzga</w>
       <w>noscroll</w>
+      <w>objs</w>
       <w>onload</w>
       <w>pagenav</w>
       <w>playpause</w>

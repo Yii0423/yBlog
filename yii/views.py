@@ -1,9 +1,11 @@
-import shutil
 import os
+import shutil
+
 from django.core import serializers
-from django.http import HttpResponse
 from django.db.models import Q
+from django.http import HttpResponse
 from django.shortcuts import render
+
 from yii.models import *
 from yii.until.common import *
 from yii.until.spider import *
@@ -43,7 +45,7 @@ def webs(request, type='', id=''):
                 url = 'essay/index.html'
                 category = Dictionary.objects.filter(pid=1, isdel=False)
                 dlist = Essay.objects.filter(categoryid=Dictionary.objects.get(key=id).pk, isdel=False).order_by(
-                    '-modify')
+                    '-create')
                 data = {'category': category, 'list': dlist[:10], 'id': id}
                 break
             if case('essay') and id.isdigit():
@@ -58,7 +60,7 @@ def webs(request, type='', id=''):
                 dlist = Collection.objects.filter(isdel=False).extra(
                     select={
                         'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`'
-                    }).order_by('-modify')
+                    }).order_by('-create')
                 data = {'list': dlist[:10]}
                 break
             if case('feedback'):
@@ -70,11 +72,11 @@ def webs(request, type='', id=''):
                 break
         if type == '':
             data['index_about'] = About.objects.get(pk=1)
-            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('sort')[:10]
+            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-create')[:10]
         # 页脚数据
-        data['foot_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-visits')[:4]
-        data['foot_collection'] = Collection.objects.filter(~Q(typeid=9), isdel=False).order_by('-visits')[0]
-        data['foot_friendlink'] = Collection.objects.filter(typeid=9, isdel=False).order_by('-visits')[:5]
+        data['foot_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-agrees')[:4]
+        data['foot_collection'] = Collection.objects.filter(~Q(typeid=9), isdel=False).order_by('-agrees')[0]
+        data['foot_friendlink'] = Collection.objects.filter(typeid=9, isdel=False).order_by('-agrees')[:5]
     except BaseException as ex:
         pass
     return render(request, url, locals())
@@ -98,8 +100,8 @@ def admin(request, type='admin', id=-1):
                 url = 'essay/details.html'
                 if id != -1:
                     model = Essay.objects.get(pk=id)
-                category = Dictionary.objects.filter(pid=1, isdel=False)
-                type = Dictionary.objects.filter(pid=11, isdel=False)
+                category = Dictionary.objects.filter(pid=1, isdel=False).order_by('-sort')
+                type = Dictionary.objects.filter(pid=11, isdel=False).order_by('-sort')
                 data = {'model': model, 'type': type, 'category': category}
                 break
             if case('collection'):
@@ -109,7 +111,7 @@ def admin(request, type='admin', id=-1):
                 url = 'collection/details.html'
                 if id != -1:
                     model = Collection.objects.get(pk=id)
-                type = Dictionary.objects.filter(pid=5, isdel=False)
+                type = Dictionary.objects.filter(pid=5, isdel=False).order_by('-sort')
                 data = {'model': model, 'type': type}
                 break
             if case('feedback'):
@@ -132,7 +134,7 @@ def admin(request, type='admin', id=-1):
                 url = '_developer/dictionary/details.html'
                 if id != -1:
                     model = Dictionary.objects.get(pk=id)
-                type = Dictionary.objects.filter(pid=0, isdel=False)
+                type = Dictionary.objects.filter(pid=0, isdel=False).order_by('-sort')
                 data = {'model': model, 'type': type}
                 break
             if case('files'):
@@ -145,7 +147,8 @@ def admin(request, type='admin', id=-1):
 
 # 接口
 def api(request, type='login'):
-    if type != 'login' and type != 'get_code' and 'select' not in type and not request.session.get('nickname'):
+    if type != 'login' and type != 'get_code' and 'select' not in type and \
+                    type != 'edit_feedback' and type != 'edit_agree' and not request.session.get('nickname'):
         return HttpResponse(json.dumps({"result": 'no user login'}), content_type='application/json')
     result = None
     try:
@@ -178,7 +181,8 @@ def api(request, type='login'):
                 limit = request.GET.get('limit')
                 data = Dictionary.objects.filter(isdel=False).extra(
                     select={
-                        'ptype': 'SELECT `value` FROM yii_dictionary t2 WHERE t2.`id` = `yii_dictionary`.pid'})
+                        'ptype': 'SELECT `value` FROM yii_dictionary t2 WHERE t2.`id` = `yii_dictionary`.pid'}).order_by(
+                    '-create')
                 result = toJson(data, int(page), int(limit))
                 break
             if case('delete_dict'):
@@ -270,7 +274,7 @@ def api(request, type='login'):
                         'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`',
                         'category': 'SELECT `value` FROM yii_dictionary WHERE `id` = `categoryid`'
                     })
-                result = toJson(data, int(page), int(limit))
+                result = toJson(data.order_by('-create'), int(page), int(limit))
                 break
             if case('delete_essay'):
                 if request.method == 'POST':
@@ -307,7 +311,7 @@ def api(request, type='login'):
                 data = Collection.objects.filter(isdel=False).extra(
                     select={
                         'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`'
-                    })
+                    }).order_by('-create')
                 result = toJson(data, int(page), int(limit))
                 break
             if case('delete_collection'):
@@ -338,7 +342,7 @@ def api(request, type='login'):
             if case('select_feedback'):
                 page = request.GET.get('page')
                 limit = request.GET.get('limit')
-                data = Feedback.objects.filter(isdel=False)
+                data = Feedback.objects.filter(isdel=False).order_by('-create')
                 result = toJson(data, int(page), int(limit))
                 break
             if case('delete_feedback'):
@@ -354,14 +358,20 @@ def api(request, type='login'):
                     model = request.POST['model']
                     if model is not None:
                         model = json.JSONDecoder().decode(model)
-                        obj = Feedback()
-                        if model['pk'] is not None and model['pk']:
-                            obj = Feedback.objects.get(pk=model['pk'])
-                        obj.ip = str(model['ip'])
-                        obj.content = str(model['content'])
-                        obj.replycontent = str(model['replycontent'])
-                        obj.save()
-                        result = json.dumps({"result": "success"})
+                        current_date = datetime.datetime.now().date()
+                        if Feedback.objects.filter(isdel=False, ip=model['ip'], create__range=(
+                                current_date, current_date + datetime.timedelta(days=1))).count() > 4:
+                            result = json.dumps({"result": "feedback too many"})
+                        else:
+                            obj = Feedback()
+                            if model['pk'] is not None and model['pk']:
+                                obj = Feedback.objects.get(pk=model['pk'])
+                            obj.ip = str(model['ip'])
+                            obj.city = str(model['city'])
+                            obj.content = str(model['content'])
+                            obj.replycontent = str(model['replycontent'])
+                            obj.save()
+                            result = json.dumps({"result": "success"})
                 break
             if case('edit_about'):
                 if request.method == 'POST':
@@ -386,6 +396,54 @@ def api(request, type='login'):
                         if not Essay.objects.filter(spiderid=model.spiderid, isdel=False).exists():
                             model.save()
                     result = json.dumps({"result": "success"})
+                break
+            if case('edit_agree'):
+                if request.method == 'POST':
+                    model = request.POST['model']
+                    if model is not None:
+                        model = json.JSONDecoder().decode(model)
+                        objs = AgreeLog.objects.filter(ip=model['ip'], articleid=int(model['articleid']))
+                        obj = None
+                        result = 'success'
+                        if objs.count() > 0:
+                            obj = objs[0]
+                        change = 0
+                        if obj is None or obj.pk is None or obj.pk == '':
+                            change = 1
+                            obj = AgreeLog()
+                            article = Essay.objects.get(pk=model['articleid'])
+                            if model['status'] == '1':
+                                article.agrees = article.agrees + 1
+                            elif model['status'] == '2':
+                                article.disagrees = article.disagrees + 1
+                            article.save()
+                            obj.status = int(model['status'])
+                        else:
+                            article = Essay.objects.get(pk=model['articleid'])
+                            if obj.status == 0:
+                                change = 1
+                                obj.status = int(model['status'])
+                                if model['status'] == '1':
+                                    article.agrees = article.agrees + 1
+                                elif model['status'] == '2':
+                                    article.disagrees = article.disagrees + 1
+                            elif obj.status == 1 and model['status'] == '1':
+                                change = -1
+                                obj.status = 0
+                                article.agrees = article.agrees - 1
+                            elif obj.status == 2 and model['status'] == '2':
+                                change = -1
+                                obj.status = 0
+                                article.disagrees = article.disagrees - 1
+                            else:
+                                change = 0
+                                result = 'failed'
+                                obj.status = obj.status
+                            article.save()
+                        obj.articleid = str(model['articleid'])
+                        obj.ip = str(model['ip'])
+                        obj.save()
+                        result = json.dumps({"result": result, "change": change})
                 break
     except BaseException as ex:
         result = json.dumps({"result": ex.args})

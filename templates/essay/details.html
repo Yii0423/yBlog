@@ -34,13 +34,17 @@
                 {% if data.model.categoryid == 3 or data.model.categoryid == 4 %}
                     <div class="pagenav group">
                         <div class="prev-nav" style="width:auto">
-                            <button type="button" class="button button-primary" style="font-size:23px">
-                                <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ data.model.agrees }}
+                            <button type="button" class="button button-primary" style="font-size:23px"
+                                    onclick="agreeEssay(this,{{ data.model.id }},1)">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span>{{ data.model.agrees }}</span>
                             </button>
                         </div>
                         <div class="next-nav" style="width:auto">
-                            <button type="button" class="button" style="font-size:18px">
-                                <i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ data.model.disagrees }}
+                            <button type="button" class="button" style="font-size:18px"
+                                    onclick="agreeEssay(this,{{ data.model.id }},2)">
+                                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                <span>{{ data.model.disagrees }}</span>
                             </button>
                         </div>
                     </div>

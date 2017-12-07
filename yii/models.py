@@ -104,6 +104,7 @@ class Feedback(models.Model):
     content = models.CharField('内容', max_length=500, default='')
     replycontent = models.CharField('回复', max_length=500, default='')
     ip = models.CharField('IP', max_length=50, default='')
+    city = models.CharField('所在地', max_length=100, default='')
     create = models.DateTimeField('创建时间', auto_now_add=True)
     modify = models.DateTimeField('修改时间', auto_now=True)
     isdel = models.BooleanField('是否删除', default=False)
@@ -113,6 +114,6 @@ class Feedback(models.Model):
 class AgreeLog(models.Model):
     articleid = models.IntegerField('文章编号', default=0)
     ip = models.CharField('IP', max_length=50, default='')
-    status = models.IntegerField('结果0-踩1-顶', default=0)
+    status = models.IntegerField('结果0-默认1-顶2-踩', default=0)
     create = models.DateTimeField('创建时间', auto_now_add=True)
     modify = models.DateTimeField('修改时间', auto_now=True)

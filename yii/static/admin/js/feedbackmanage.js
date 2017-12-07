@@ -18,7 +18,8 @@ $(function () {
             cols: [[
                 {checkbox: true, LAY_CHECKED: false, fixed: true},
                 {field: 'pk', title: '编号', width: 80, sort: true},
-                {field: 'ip', title: '留言人IP', width: 150},
+                {field: 'ip', title: 'IP', width: 150},
+                {field: 'city', title: 'IP归属地', width: 200},
                 {field: 'content', title: '内容', width: 250},
                 {field: 'replycontent', title: '回复', width: 350},
                 {field: 'create', title: '创建时间', width: 200, sort: true},
