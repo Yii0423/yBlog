@@ -68,10 +68,10 @@ def webs(request, type='', id=''):
                 break
             if case('about'):
                 url = 'about/index.html'
-                data = {'model': About.objects.get(pk=1)}
+                data = {'list': About.objects.filter(isdel=False).order_by('-sort')}
                 break
         if type == '':
-            data['index_about'] = About.objects.get(pk=1)
+            data['index_about'] = Index.objects.get(pk=1)
             data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-create')[:10]
         # 页脚数据
         data['foot_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-agrees')[:4]
@@ -92,6 +92,9 @@ def admin(request, type='admin', id=-1):
             if case('login'):
                 url = 'login.html'
                 request.session.clear()
+                break
+            if case('admin'):
+                data = {'model': Index.objects.get(pk=1)}
                 break
             if case('essay'):
                 url = 'essay/list.html'
@@ -124,8 +127,14 @@ def admin(request, type='admin', id=-1):
                 data = {'model': model}
                 break
             if case('about'):
-                url = 'about/index.html'
-                data = {'model': About.objects.get(pk=1)}
+                url = 'about/list.html'
+                break
+            if case('edit_about'):
+                url = 'about/details.html'
+                if id != -1:
+                    model = About.objects.get(pk=id)
+                type = Dictionary.objects.filter(~Q(pk=14), pid=11, isdel=False).order_by('-sort')
+                data = {'model': model, 'type': type}
                 break
             if case('dict'):
                 url = '_developer/dictionary/list.html '
@@ -339,6 +348,40 @@ def api(request, type='login'):
                         obj.save()
                         result = json.dumps({"result": "success"})
                 break
+            if case('select_about'):
+                page = request.GET.get('page')
+                limit = request.GET.get('limit')
+                data = About.objects.filter(isdel=False).extra(
+                    select={
+                        'type': 'SELECT `value` FROM yii_dictionary WHERE `id` = `typeid`'
+                    }).order_by('-create')
+                result = toJson(data, int(page), int(limit))
+                break
+            if case('delete_about'):
+                if request.method == 'POST':
+                    ids = request.POST['ids']
+                    if ids is not None:
+                        list = [int(x) for x in ids.split(',') if x]
+                        About.objects.filter(pk__in=list).update(isdel=True)
+                        result = json.dumps({"result": "success"})
+                break
+            if case('edit_about'):
+                if request.method == 'POST':
+                    model = request.POST['model']
+                    if model is not None:
+                        model = json.JSONDecoder().decode(model)
+                        obj = About()
+                        if model['pk'] is not None and model['pk']:
+                            obj = About.objects.get(pk=model['pk'])
+                        obj.typeid = int(model['typeid'])
+                        obj.title = str(model['title'])
+                        obj.url = str(model['url'])
+                        obj.filesurl = str(model['filesurl'])
+                        obj.content = str(model['content'])
+                        obj.sort = int(model['sort'])
+                        obj.save()
+                        result = json.dumps({"result": "success"})
+                break
             if case('select_feedback'):
                 page = request.GET.get('page')
                 limit = request.GET.get('limit')
@@ -373,18 +416,19 @@ def api(request, type='login'):
                             obj.save()
                             result = json.dumps({"result": "success"})
                 break
-            if case('edit_about'):
+            if case('edit_index'):
                 if request.method == 'POST':
                     model = request.POST['model']
                     if model is not None:
                         model = json.JSONDecoder().decode(model)
-                        obj = About()
+                        obj = Index()
                         if model['pk'] is not None and model['pk']:
-                            obj = About.objects.get(pk=model['pk'])
+                            obj = Index.objects.get(pk=model['pk'])
                         obj.title = str(model['title'])
+                        obj.logourl = str(model['logourl'])
                         obj.imagesurl = str(model['imagesurl'])
-                        obj.leading = str(model['leading'])
-                        obj.content = str(model['content'])
+                        obj.keywords = str(model['keywords'])
+                        obj.description = str(model['description'])
                         obj.save()
                         result = json.dumps({"result": "success"})
                 break

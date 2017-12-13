@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>abled</w>
+      <w>aboutmanage</w>
       <w>adminlte</w>
       <w>articleid</w>
       <w>audiosurl</w>
@@ -11,6 +12,7 @@
       <w>bootcss</w>
       <w>categoryid</w>
       <w>categoryname</w>
+      <w>cateid</w>
       <w>clearfiles</w>
       <w>clearimages</w>
       <w>clearsign</w>
@@ -28,6 +30,7 @@
       <w>filesurl</w>
       <w>flexslider</w>
       <w>friendlink</w>
+      <w>glyphicon</w>
       <w>imagesurl</w>
       <w>imageurl</w>
       <w>imgs</w>
@@ -38,6 +41,7 @@
       <w>layedit</w>
       <w>laypage</w>
       <w>loadingmore</w>
+      <w>logourl</w>
       <w>mailchimp</w>
       <w>minigrid</w>
       <w>modernizr</w>
@@ -63,6 +67,7 @@
       <w>templ</w>
       <w>templet</w>
       <w>textarea</w>
+      <w>timeline</w>
       <w>tipso</w>
       <w>todatetime</w>
       <w>uploadfiles</w>

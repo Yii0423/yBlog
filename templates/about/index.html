@@ -12,35 +12,83 @@
     <title>南风喃 - 关于</title>
     {% load static %}
     {% include 'common/static.html' %}
+    <link rel="stylesheet" href="{% static 'css/timeline.css' %}" type="text/css"/>
 </head>
 <body id="top">
 {% include 'common/header.html' %}
 <!-- Content -->
-<section id="content-wrap" class="blog-single">
-    <div class="row">
-        <div class="col-twelve">
-            <article class="format-gallery">
-                <div class="content-media">
-                    <div class="post-slider flexslider">
-                        <ul class="slides">
-                            {% for img in data.model.split2list %}
-                                {% if img %}
-                                    <li>
-                                        <img src="{{ img }}" alt="南风喃 - about">
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
+<section id="cd-timeline" class="cd-container format-audio" style="margin-top:100px">
+    {% for model in data.list %}
+        {% if model.typeid == 12 %}
+            <!-- audio -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-01">
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
                 </div>
-                <div class="primary-content">
-                    <h1 class="entry-title">{{ data.model.title }}</h1>
-                    <p class="lead">{{ data.model.leading }}</p>
-                    {% autoescape off %}
-                        <p>{{ data.model.content }}</p>
-                    {% endautoescape %}
+                <div class="cd-timeline-content">
+                    <h2>{{ model.title }}</h2>
+                    {% if model.content %} <p>{{ model.content }}</p> {% endif %}
+                    <audio id="player2" src="{{ model.split2files }}" width="100%" controls="controls"
+                           height="42"></audio>
+                    {% if model.split2url %}
+                        <a href="{{ model.split2url }}" class="cd-read-more" style="line-height:16px;">立即跳转</a>
+                    {% endif %}
+                    <span class="cd-date">{{ model.create|date:"Y-m-d" }}</span>
                 </div>
-            </article>
+            </div>
+        {% elif model.typeid == 13 %}
+            <!-- image -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-02">
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2>{{ model.title }}</h2>
+                    {% if model.content %} <p>{{ model.content }}</p> {% endif %}
+                    <img src="{{ model.split2files }}" alt="南风喃"/>
+                    {% if model.split2url %}
+                        <a href="{{ model.split2url }}" class="cd-read-more" style="line-height:16px;">立即跳转</a>
+                    {% endif %}
+                    <span class="cd-date">{{ model.create|date:"Y-m-d" }}</span>
+                </div>
+            </div>
+        {% elif model.typeid == 15 %}
+            <!-- video -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-03">
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2>{{ model.title }}</h2>
+                    {% if model.content %} <p>{{ model.content }}</p> {% endif %}
+                    <video id="player2" src="{{ model.split2files }}" width="100%" controls="controls"
+                           height="42"></video>
+                    {% if model.split2url %}
+                        <a href="{{ model.split2url }}" class="cd-read-more" style="line-height:16px;">立即跳转</a>
+                    {% endif %}
+                    <span class="cd-date">{{ model.create|date:"Y-m-d" }}</span>
+                </div>
+            </div>
+        {% elif model.typeid == 16 %}
+            <!-- text -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-04">
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2>{{ model.title }}</h2>
+                    {% if model.content %} <p>{{ model.content }}</p> {% endif %}
+                    {% if model.split2url %}
+                        <a href="{{ model.split2url }}" class="cd-read-more" style="line-height:16px;">立即跳转</a>
+                    {% endif %}
+                    <span class="cd-date">{{ model.create|date:"Y-m-d" }}</span>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-00">
+            <img src="{% static 'images/constellation/01.png' %}" alt="南风喃"/>
         </div>
     </div>
 </section>

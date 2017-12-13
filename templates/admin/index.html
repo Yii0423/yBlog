@@ -5,13 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>yii's blog 后台 - 首页</title>
     {% include 'admin/common/static.html' %}
-    <script>
+    <script type="text/javascript">
         $(function () {
-            $('.layui-nav>.layui-nav-item:eq(0)').addClass('layui-this');
+            layui.use(['form', 'layedit', 'upload'], function () {
+                var form = layui.form, upload = layui.upload;
+                //LOGO上传
+                upload.render({
+                    elem: '#btnUploadss1',
+                    url: '/admin/api/upload_files/?dir=/static/uploadfiles/autouploads',
+                    before: function () {
+                        $('#btnSubmint').attr('disabled', true).addClass('layui-btn-disabled');
+                        $('input[name="logourl"]').val('');
+                    },
+                    done: function (res) {
+                        $('#btnSubmint').attr('disabled', false).removeClass('layui-btn-disabled');
+                        $('input[name="logourl"]').val($('input[name="logourl"]').val()
+                            + ',' + res['data']['src']);
+                    }
+                });
+                //BANNERS上传
+                upload.render({
+                    elem: '#btnUploadss2',
+                    url: '/admin/api/upload_files/?dir=/static/uploadfiles/autouploads',
+                    multiple: true,
+                    before: function () {
+                        $('#btnSubmint').attr('disabled', true).addClass('layui-btn-disabled');
+                        $('input[name="imagesurl"]').val('');
+                    },
+                    done: function (res) {
+                        $('input[name="imagesurl"]').val($('input[name="imagesurl"]').val()
+                            + ',' + res['data']['src']);
+                    },
+                    allDone: function () {
+                        $('#btnSubmint').attr('disabled', false).removeClass('layui-btn-disabled');
+                    }
+                });
+                //表单提交
+                form.on('submit(formDemo)', function (data) {
+                    $(this).pag_edit({
+                        type: 'post',
+                        url_edit: '/admin/api/edit_index/',
+                        params: {'model': JSON.stringify(data.field)}
+                    });
+                    return false;
+                });
+            });
         });
     </script>
 </head>
 <body>
 {% include 'admin/common/header.html' %}
+<div class="layui-fluid layui-clear" style="margin-top:30px">
+    <div class="layui-row">
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12">
+            <div class="box box-primary">
+                <div class="box-header">
+                </div>
+                <div class="box-body">
+                    <form class="layui-form layui-form-pane layui-container" action="">
+                        <input type="text" name="pk" value="{{ data.model.pk }}" hidden/>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*网站名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入网站名"
+                                       autocomplete="off" autofocus class="layui-input" value="{{ data.model.title }}"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*LOGO</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="logourl" required lay-verify="required"
+                                       placeholder="请输入图片链接(多个以,隔开)" autocomplete="off" class="layui-input"
+                                       value="{{ data.model.logourl }}"/>
+                            </div>
+                            <button id="btnUploadss1" class="layui-btn" type="button">单图上传</button>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">BANNERS</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="imagesurl" placeholder="请输入图片链接(多个以,隔开)"
+                                       autocomplete="off" class="layui-input" value="{{ data.model.imagesurl }}"/>
+                            </div>
+                            <button id="btnUploadss2" class="layui-btn" type="button">多图上传</button>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">SEO关键词</label>
+                            <div class="layui-input-block">
+                                <textarea name="keywords" placeholder="请输入SEO关键词"
+                                          class="layui-textarea">{{ data.model.keywords }}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">SEO描述</label>
+                            <div class="layui-input-block">
+                                <textarea name="description" placeholder="请输入SEO描述" rows="15"
+                                          class="layui-textarea">{{ data.model.description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 关于 - 编辑</title>
+    {% include 'admin/common/static.html' %}
+    <script type="text/javascript">
+        $(function () {
+            if ('{{ data.model.typeid }}' != '') $("[name=typeid]").val('{{ data.model.typeid }}');
+            layui.use(['form', 'upload'], function () {
+                var form = layui.form, upload = layui.upload;
+                //文件上传
+                upload.render({
+                    elem: '#btnUploadss',
+                    url: '/admin/api/upload_files/?dir=/static/uploadfiles/autouploads/about',
+                    accept: 'file',
+                    before: function () {
+                        $('#btnSubmint').attr('disabled', true).addClass('layui-btn-disabled');
+                        $('input[name="filesurl"]').val('');
+                    },
+                    done: function (res) {
+                        $('#btnSubmint').attr('disabled', false).removeClass('layui-btn-disabled');
+                        $('input[name="filesurl"]').val($('input[name="filesurl"]').val()
+                            + ',' + res['data']['src']);
+                    }
+                });
+                //表单提交
+                form.on('submit(formDemo)', function (data) {
+                    $(this).pag_edit({
+                        type: 'post',
+                        url_edit: '/admin/api/edit_about/',
+                        params: {'model': JSON.stringify(data.field)}
+                    });
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="layui-container margin-default">
+    <form class="layui-form layui-form-pane" action="">
+        <input type="text" name="pk" value="{{ data.model.pk }}" hidden/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*类型</label>
+            <div class="layui-input-block">
+                <select name="typeid" lay-verify="required">
+                    {% for type in data.type %}
+                        <option value="{{ type.id }}">{{ type.value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" placeholder="请输入标题" autocomplete="off"
+                       required lay-verify="required" class="layui-input" value="{{ data.model.title }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="url" placeholder="请输入链接" autocomplete="off" class="layui-input"
+                       value="{{ data.model.url }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*文件链接</label>
+            <div class="layui-input-inline">
+                <input type="text" name="filesurl" placeholder="请输入文件链接" autocomplete="off" class="layui-input"
+                       value="{{ data.model.filesurl }}"/>
+            </div>
+            <button id="btnUploadss" class="layui-btn" type="button">文件上传</button>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">序号</label>
+            <div class="layui-input-block">
+                <input type="number" name="sort" placeholder="请输入序号(值越小排名越靠前)"
+                       required lay-verify="required" autocomplete="off" class="layui-input"
+                       value="{{ data.model.sort }}"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">描述</label>
+            <div class="layui-input-block">
+                <textarea name="content" placeholder="请输入描述" class="layui-textarea">{{ data.model.content }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button id="btnSubmint" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

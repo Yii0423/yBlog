@@ -16,11 +16,15 @@
                     url: '/admin/api/upload_files/?dir=/static/uploadfiles/autouploads/collection',
                     multiple: true,
                     before: function () {
+                        $('#btnSubmint').attr('disabled', true).addClass('layui-btn-disabled');
                         $('input[name="imagesurl"]').val('');
                     },
                     done: function (res) {
                         $('input[name="imagesurl"]').val($('input[name="imagesurl"]').val()
                             + ',' + res['data']['src']);
+                    },
+                    allDone: function () {
+                        $('#btnSubmint').attr('disabled', false).removeClass('layui-btn-disabled');
                     }
                 });
                 //表单提交
@@ -88,7 +92,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button id="btnSubmint" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>

@@ -1,6 +1,23 @@
 from django.db import models
 
 
+# 网站信息表
+class Index(models.Model):
+    title = models.CharField('网站名', max_length=100, default='')
+    logourl = models.CharField('LOGO链接', max_length=100, default='')
+    imagesurl = models.CharField('BANNERS链接', max_length=500, default='')
+    keywords = models.CharField('SEO关键词', max_length=1000, default='')
+    description = models.TextField('SEO描述', default='')
+    create = models.DateTimeField('创建时间', auto_now_add=True)
+    modify = models.DateTimeField('修改时间', auto_now=True)
+
+    def split2logo(self):
+        return self.logourl.replace(',', '')
+
+    def split2list(self):
+        return self.imagesurl.split(',')
+
+
 # 字典表
 class Dictionary(models.Model):
     pid = models.IntegerField('父类编号', default=0)
@@ -31,14 +48,21 @@ class User(models.Model):
 # 关于表
 class About(models.Model):
     title = models.CharField('标题', max_length=100, default='')
-    imagesurl = models.CharField('图片链接', max_length=500, default='')
-    leading = models.CharField('引导语', max_length=1000, default='')
-    content = models.TextField('正文', default='')
+    typeid = models.IntegerField('类型编号', default=0)
+    type = models.CharField('类型', max_length=500, default='')
+    url = models.CharField('链接', max_length=100, default='')
+    filesurl = models.CharField('文件链接', max_length=100, default='')
+    content = models.TextField('描述', default='')
     create = models.DateTimeField('创建时间', auto_now_add=True)
     modify = models.DateTimeField('修改时间', auto_now=True)
+    sort = models.IntegerField('排序', default=0)
+    isdel = models.BooleanField('是否删除', default=False)
 
-    def split2list(self):
-        return self.imagesurl.split(',')
+    def split2files(self):
+        return self.filesurl.replace(',', '')
+
+    def split2url(self):
+        return self.url.replace(',', '')
 
 
 # 随笔表

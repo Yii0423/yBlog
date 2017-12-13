@@ -149,7 +149,7 @@ $(function () {
     $('.layui-nav>.layui-nav-item').each(function (index) {
         var link = $(this).find("a").attr("href");
         if (index !== 0 && window.location.href.indexOf(link) > -1) {
-            $(this).addClass('layui-this');
+            $(this).addClass('layui-this').siblings().removeClass('layui-this');
         }
     });
 });
