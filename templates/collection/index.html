@@ -7,10 +7,10 @@
     <!-- Basic needs -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="南风喃收藏">
-    <meta name="keywords" content="南风喃,blog,yii,collection">
+    <meta name="description" content="{{ data.index_about.title }}收藏">
+    <meta name="keywords" content="{{ data.index_about.title }} - 关于,blog,yii,collection">
     <meta name="author" content="yii">
-    <title>南风喃 - 收藏</title>
+    <title>{{ data.index_about.title }} - 收藏</title>
     {% load static %}
     {% include 'common/static.html' %}
 </head>
@@ -27,7 +27,8 @@
                     <article class="brick entry format-standard animate-this">
                         <div class="entry-thumb">
                             <a href="{{ model.url }}" class="thumb-link" target="_blank">
-                                <img src="{{ model.clearimages }}" alt="南风喃 - collection - image"/>
+                                <img src="{{ model.clearimages }}"
+                                     alt="{{ data.index_about.title }} - collection - image"/>
                             </a>
                         </div>
                         <div class="entry-text">

@@ -7,10 +7,10 @@
     <!-- Basic needs -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="南风喃随笔">
-    <meta name="keywords" content="南风喃,blog,yii,essay">
+    <meta name="description" content="{{ data.index_about.title }}随笔">
+    <meta name="keywords" content="{{ data.index_about.title }},blog,yii,essay">
     <meta name="author" content="yii">
-    <title>南风喃 - 随笔</title>
+    <title>{{ data.index_about.title }} - 随笔</title>
     {% load static %}
     {% include 'common/static.html' %}
     <script type="text/javascript">
@@ -50,7 +50,8 @@
                     <article class="brick entry format-audio animate-this">
                         <div class="entry-thumb">
                             <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
-                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                                <img src="{{ model.clearimages }}" alt="{{ data.index_about.title }} - essay - image"
+                                     style="width:100%"/>
                             </a>
                             <div class="audio-wrap">
                                 <audio id="player2" src="{{ model.clearfiles }}" width="100%"
@@ -70,7 +71,8 @@
                     <article class="brick entry format-standard animate-this">
                         <div class="entry-thumb">
                             <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
-                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                                <img src="{{ model.clearimages }}" alt="{{ data.index_about.title }} - essay - image"
+                                     style="width:100%"/>
                             </a>
                         </div>
                         <div class="entry-text">
@@ -90,7 +92,8 @@
                                     {% for img in model.split2list %}
                                         {% if img %}
                                             <li>
-                                                <img src="{{ img }}" alt="南风喃 - essay" style="width:100%"/>
+                                                <img src="{{ img }}" alt="{{ data.index_about.title }} - essay"
+                                                     style="width:100%"/>
                                             </li>
                                         {% endif %}
                                     {% endfor %}

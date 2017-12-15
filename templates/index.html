@@ -47,7 +47,8 @@
                     <article class="brick entry format-audio animate-this">
                         <div class="entry-thumb">
                             <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
-                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                                <img src="{{ model.clearimages }}" alt="{{ data.index_about.title }} - image"
+                                     style="width:100%"/>
                             </a>
                             <div class="audio-wrap">
                                 <audio id="player2" src="{{ model.clearfiles }}" width="100%"
@@ -67,7 +68,8 @@
                     <article class="brick entry format-standard animate-this">
                         <div class="entry-thumb">
                             <a href="/essay/{{ model.id }}" class="thumb-link" target="_blank">
-                                <img src="{{ model.clearimages }}" alt="南风喃 - essay - image" style="width:100%"/>
+                                <img src="{{ model.clearimages }}" alt="{{ data.index_about.title }} - image"
+                                     style="width:100%"/>
                             </a>
                         </div>
                         <div class="entry-text">
@@ -87,7 +89,8 @@
                                     {% for img in model.split2list %}
                                         {% if img %}
                                             <li>
-                                                <img src="{{ img }}" alt="南风喃 - essay" style="width:100%"/>
+                                                <img src="{{ img }}" alt="{{ data.index_about.title }} - image"
+                                                     style="width:100%"/>
                                             </li>
                                         {% endif %}
                                     {% endfor %}

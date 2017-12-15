@@ -7,9 +7,10 @@
     <!-- Basic needs -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>南风喃 - 关于</title>
+    <meta name="description" content="{{ data.index_about.title }}关于">
+    <meta name="keywords" content="{{ data.index_about.title }},blog,yii,about">
+    <meta name="author" content="yii">
+    <title>{{ data.index_about.title }} - 关于</title>
     {% load static %}
     {% include 'common/static.html' %}
     <link rel="stylesheet" href="{% static 'css/timeline.css' %}" type="text/css"/>
@@ -23,7 +24,8 @@
             <!-- audio -->
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-01">
-                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png"
+                         alt="{{ data.index_about.title }} - about - image"/>
                 </div>
                 <div class="cd-timeline-content">
                     <h2>{{ model.title }}</h2>
@@ -40,12 +42,13 @@
             <!-- image -->
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-02">
-                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png"
+                         alt="{{ data.index_about.title }} - about - image"/>
                 </div>
                 <div class="cd-timeline-content">
                     <h2>{{ model.title }}</h2>
                     {% if model.content %} <p>{{ model.content }}</p> {% endif %}
-                    <img src="{{ model.split2files }}" alt="南风喃"/>
+                    <img src="{{ model.split2files }}" alt="{{ data.index_about.title }} - about - image"/>
                     {% if model.split2url %}
                         <a href="{{ model.split2url }}" class="cd-read-more" style="line-height:16px;">立即跳转</a>
                     {% endif %}
@@ -56,7 +59,8 @@
             <!-- video -->
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-03">
-                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png"
+                         alt="{{ data.index_about.title }} - about - image"/>
                 </div>
                 <div class="cd-timeline-content">
                     <h2>{{ model.title }}</h2>
@@ -73,7 +77,8 @@
             <!-- text -->
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-04">
-                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png" alt="南风喃"/>
+                    <img src="/static/images/constellation/{{ model.create|date:"m" }}.png"
+                         alt="{{ data.index_about.title }} - about - image"/>
                 </div>
                 <div class="cd-timeline-content">
                     <h2>{{ model.title }}</h2>
@@ -88,7 +93,7 @@
     {% endfor %}
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-00">
-            <img src="{% static 'images/constellation/01.png' %}" alt="南风喃"/>
+            <img src="{% static 'images/constellation/01.png' %}" alt="{{ data.index_about.title }} - about - image"/>
         </div>
     </div>
 </section>

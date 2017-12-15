@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80b5da5a-2426-4175-a39c-eac29a7d06f8" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/admin/about/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/static/admin/images/code.jpg" afterPath="$PROJECT_DIR$/yii/static/admin/images/code.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/about/index.html" afterPath="$PROJECT_DIR$/templates/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/collection/details.html" afterPath="$PROJECT_DIR$/templates/admin/collection/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/common/header.html" afterPath="$PROJECT_DIR$/templates/admin/common/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/index.html" afterPath="$PROJECT_DIR$/templates/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/collection/index.html" afterPath="$PROJECT_DIR$/templates/collection/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/common/footer.html" afterPath="$PROJECT_DIR$/templates/common/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/common/header.html" afterPath="$PROJECT_DIR$/templates/common/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/essay/details.html" afterPath="$PROJECT_DIR$/templates/essay/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/essay/index.html" afterPath="$PROJECT_DIR$/templates/essay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/feedback/index.html" afterPath="$PROJECT_DIR$/templates/feedback/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update sql.bat" afterPath="$PROJECT_DIR$/update sql.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/models.py" afterPath="$PROJECT_DIR$/yii/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/static/admin/js/common.js" afterPath="$PROJECT_DIR$/yii/static/admin/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/static/css/main.css" afterPath="$PROJECT_DIR$/yii/static/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/views.py" afterPath="$PROJECT_DIR$/yii/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +35,12 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii/models.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/about/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="1472">
+              <caret line="92" column="16" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -56,10 +49,9 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="73" column="57" lean-forward="true" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
+            <state relative-caret-position="592">
+              <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#551#759#0" expanded="false" />
                 <element signature="e#773#871#0" expanded="false" />
                 <element signature="e#1091#1490#0" expanded="false" />
@@ -67,57 +59,89 @@
                 <element signature="e#1820#2148#0" expanded="false" />
                 <element signature="e#2198#2247#0" expanded="false" />
                 <element signature="e#2294#2425#0" expanded="false" />
-                <element signature="e#3225#3305#0" expanded="false" />
-                <element signature="e#3352#3415#0" expanded="false" />
-                <element signature="e#3462#3507#0" expanded="false" />
-                <element signature="e#3559#3944#0" expanded="false" />
-                <element signature="e#3996#4046#0" expanded="false" />
-                <element signature="e#4103#4384#0" expanded="false" />
-                <element signature="e#4434#4482#0" expanded="false" />
-                <element signature="e#4537#4713#0" expanded="false" />
-                <element signature="e#4760#4805#0" expanded="false" />
-                <element signature="e#4857#5140#0" expanded="false" />
-                <element signature="e#5186#5248#0" expanded="false" />
-                <element signature="e#5299#5591#0" expanded="false" />
-                <element signature="e#5638#5700#0" expanded="false" />
-                <element signature="e#6234#7241#0" expanded="false" />
-                <element signature="e#7291#7390#0" expanded="false" />
-                <element signature="e#7443#7856#0" expanded="false" />
-                <element signature="e#7909#8263#0" expanded="false" />
-                <element signature="e#8314#9081#0" expanded="false" />
-                <element signature="e#9135#9818#0" expanded="false" />
-                <element signature="e#9872#10854#0" expanded="false" />
-                <element signature="e#10908#11604#0" expanded="false" />
-                <element signature="e#10957#11582#0" expanded="false" />
-                <element signature="e#11656#11933#0" expanded="false" />
-                <element signature="e#11987#12668#0" expanded="false" />
-                <element signature="e#12722#13071#0" expanded="false" />
-                <element signature="e#13123#14234#0" expanded="false" />
-                <element signature="e#14293#14687#0" expanded="false" />
-                <element signature="e#14746#15100#0" expanded="false" />
-                <element signature="e#15157#15994#0" expanded="false" />
-                <element signature="e#16048#16437#0" expanded="false" />
-                <element signature="e#16491#16840#0" expanded="false" />
-                <element signature="e#16892#17717#0" expanded="false" />
-                <element signature="e#17774#18016#0" expanded="false" />
-                <element signature="e#18073#18425#0" expanded="false" />
-                <element signature="e#18480#19619#0" expanded="false" />
-                <element signature="e#19671#20464#0" expanded="false" />
-                <element signature="e#20514#20892#0" expanded="false" />
-                <element signature="e#20944#23524#0" expanded="false" />
-                <marker date="1513158074572" expanded="true" signature="1982:2038" ph="SELECT `valu... yii_dictionary" />
-                <marker date="1513158074572" expanded="true" signature="7655:7729" ph="SELECT `valu... yii_dictionary" />
-                <marker date="1513158074572" expanded="true" signature="12385:12441" ph="SELECT `valu... yii_dictionary" />
-                <marker date="1513158074572" expanded="true" signature="12481:12541" ph="SELECT `valu... yii_dictionary" />
-                <marker date="1513158074572" expanded="true" signature="14504:14560" ph="SELECT `valu... yii_dictionary" />
-                <marker date="1513158074572" expanded="true" signature="16254:16310" ph="SELECT `valu... yii_dictionary" />
+                <element signature="e#3236#3316#0" expanded="false" />
+                <element signature="e#3363#3426#0" expanded="false" />
+                <element signature="e#3473#3518#0" expanded="false" />
+                <element signature="e#3570#3955#0" expanded="false" />
+                <element signature="e#4007#4057#0" expanded="false" />
+                <element signature="e#4114#4395#0" expanded="false" />
+                <element signature="e#4445#4493#0" expanded="false" />
+                <element signature="e#4548#4724#0" expanded="false" />
+                <element signature="e#4771#4816#0" expanded="false" />
+                <element signature="e#4868#5151#0" expanded="false" />
+                <element signature="e#5197#5259#0" expanded="false" />
+                <element signature="e#5310#5602#0" expanded="false" />
+                <element signature="e#5649#5711#0" expanded="false" />
+                <element signature="e#6245#7252#0" expanded="false" />
+                <element signature="e#7302#7401#0" expanded="false" />
+                <element signature="e#7454#7867#0" expanded="false" />
+                <element signature="e#7920#8274#0" expanded="false" />
+                <element signature="e#8325#9092#0" expanded="false" />
+                <element signature="e#9146#9829#0" expanded="false" />
+                <element signature="e#9883#10865#0" expanded="false" />
+                <element signature="e#10919#11615#0" expanded="false" />
+                <element signature="e#10968#11593#0" expanded="false" />
+                <element signature="e#11667#11944#0" expanded="false" />
+                <element signature="e#11998#12679#0" expanded="false" />
+                <element signature="e#12733#13082#0" expanded="false" />
+                <element signature="e#13134#14245#0" expanded="false" />
+                <element signature="e#14304#14698#0" expanded="false" />
+                <element signature="e#14757#15111#0" expanded="false" />
+                <element signature="e#15168#16005#0" expanded="false" />
+                <element signature="e#16059#16448#0" expanded="false" />
+                <element signature="e#16502#16851#0" expanded="false" />
+                <element signature="e#16903#17728#0" expanded="false" />
+                <element signature="e#17785#18027#0" expanded="false" />
+                <element signature="e#18084#18436#0" expanded="false" />
+                <element signature="e#18491#19630#0" expanded="false" />
+                <element signature="e#19682#20475#0" expanded="false" />
+                <element signature="e#20525#20903#0" expanded="false" />
+                <element signature="e#20955#23535#0" expanded="false" />
+                <marker date="1513317998900" expanded="true" signature="1982:2038" ph="SELECT `valu... yii_dictionary" />
+                <marker date="1513317998900" expanded="true" signature="7666:7740" ph="SELECT `valu... yii_dictionary" />
+                <marker date="1513317998900" expanded="true" signature="12396:12452" ph="SELECT `valu... yii_dictionary" />
+                <marker date="1513317998900" expanded="true" signature="12492:12552" ph="SELECT `valu... yii_dictionary" />
+                <marker date="1513317998900" expanded="true" signature="14515:14571" ph="SELECT `valu... yii_dictionary" />
+                <marker date="1513317998900" expanded="true" signature="16265:16321" ph="SELECT `valu... yii_dictionary" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/common/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="662">
+              <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/collection/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-938">
+              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#article#2;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/essay/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
               <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
@@ -126,14 +150,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/common/header.html">
+      <file leaf-file-name="details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/essay/details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#header#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="10" column="111" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/feedback/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +227,6 @@
         <option value="$PROJECT_DIR$/templates/admin/_developer/dictionary/list.html" />
         <option value="$PROJECT_DIR$/yii/static/admin/css/layout.css" />
         <option value="$PROJECT_DIR$/templates/admin/login.html" />
-        <option value="$PROJECT_DIR$/Blog/settings.py" />
         <option value="$PROJECT_DIR$/templates/admin/collection/list.html" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/collectionmanage.js" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/filemanage.js" />
@@ -210,19 +241,14 @@
         <option value="D:/Python/Lib/site-packages/HTMLParser.py" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/essaymanage.js" />
         <option value="$PROJECT_DIR$/yii/until/spider.py" />
-        <option value="$PROJECT_DIR$/templates/feedback/index.html" />
         <option value="$PROJECT_DIR$/templates/common/static-footer.html" />
-        <option value="$PROJECT_DIR$/templates/essay/index.html" />
-        <option value="$PROJECT_DIR$/templates/collection/index.html" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/feedbackmanage.js" />
-        <option value="$PROJECT_DIR$/templates/essay/details.html" />
         <option value="$PROJECT_DIR$/yii/static/js/common.js" />
         <option value="$PROJECT_DIR$/yii/static/js/main.js" />
         <option value="$PROJECT_DIR$/yii/static/css/vendor.css" />
         <option value="$PROJECT_DIR$/yii/static/css/fonts.css" />
         <option value="$PROJECT_DIR$/yii/static/css/base.css" />
         <option value="$PROJECT_DIR$/templates/common/static.html" />
-        <option value="$PROJECT_DIR$/templates/common/footer.html" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/common.js" />
         <option value="$PROJECT_DIR$/templates/admin/common/header.html" />
         <option value="$PROJECT_DIR$/templates/admin/about/list.html" />
@@ -231,12 +257,18 @@
         <option value="$PROJECT_DIR$/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/templates/admin/about/details.html" />
         <option value="$PROJECT_DIR$/yii/static/admin/js/aboutmanage.js" />
-        <option value="$PROJECT_DIR$/templates/about/index.html" />
         <option value="$PROJECT_DIR$/yii/static/css/timeline.css" />
-        <option value="$PROJECT_DIR$/yii/views.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/yii/static/css/main.css" />
         <option value="$PROJECT_DIR$/templates/common/header.html" />
+        <option value="$PROJECT_DIR$/Blog/settings.py" />
+        <option value="$PROJECT_DIR$/templates/collection/index.html" />
+        <option value="$PROJECT_DIR$/templates/about/index.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/essay/index.html" />
+        <option value="$PROJECT_DIR$/templates/essay/details.html" />
+        <option value="$PROJECT_DIR$/templates/feedback/index.html" />
+        <option value="$PROJECT_DIR$/yii/views.py" />
+        <option value="$PROJECT_DIR$/templates/common/footer.html" />
       </list>
     </option>
   </component>
@@ -289,8 +321,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,7 +331,24 @@
             <path>
               <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="yBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yBlog" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="collection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
@@ -312,25 +359,15 @@
             <path>
               <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="yBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="feedback" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,7 +446,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1705757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17217484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -460,14 +497,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Blog/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="120" column="7" lean-forward="true" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii/static/admin/js/dictmanage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -538,20 +567,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/feedback/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii/static/js/dynamics.js" />
     <entry file="file://$PROJECT_DIR$/yii/static/js/jquery.waterfall.min.js" />
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-643338342/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="289" column="4" lean-forward="false" selection-start-line="289" selection-start-column="4" selection-end-line="289" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -588,13 +609,6 @@
         <state relative-caret-position="320">
           <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/collection/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -637,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4681" lean-forward="false" selection-start-line="0" selection-start-column="4643" selection-end-line="0" selection-end-column="4681" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,15 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/common/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -692,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="151" column="80" lean-forward="true" selection-start-line="151" selection-start-column="80" selection-end-line="151" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="61" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="92" column="59" lean-forward="false" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="73" column="18" lean-forward="true" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,7 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,23 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/essay/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="108" column="33" lean-forward="true" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/essay/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="26" column="80" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -780,82 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3974" lean-forward="true" selection-start-line="0" selection-start-column="3974" selection-end-line="0" selection-end-column="3974" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="49" column="68" lean-forward="true" selection-start-line="49" selection-start-column="68" selection-end-line="49" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="73" column="57" lean-forward="true" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#551#759#0" expanded="false" />
-            <element signature="e#773#871#0" expanded="false" />
-            <element signature="e#1091#1490#0" expanded="false" />
-            <element signature="e#1554#1768#0" expanded="false" />
-            <element signature="e#1820#2148#0" expanded="false" />
-            <element signature="e#2198#2247#0" expanded="false" />
-            <element signature="e#2294#2425#0" expanded="false" />
-            <element signature="e#3225#3305#0" expanded="false" />
-            <element signature="e#3352#3415#0" expanded="false" />
-            <element signature="e#3462#3507#0" expanded="false" />
-            <element signature="e#3559#3944#0" expanded="false" />
-            <element signature="e#3996#4046#0" expanded="false" />
-            <element signature="e#4103#4384#0" expanded="false" />
-            <element signature="e#4434#4482#0" expanded="false" />
-            <element signature="e#4537#4713#0" expanded="false" />
-            <element signature="e#4760#4805#0" expanded="false" />
-            <element signature="e#4857#5140#0" expanded="false" />
-            <element signature="e#5186#5248#0" expanded="false" />
-            <element signature="e#5299#5591#0" expanded="false" />
-            <element signature="e#5638#5700#0" expanded="false" />
-            <element signature="e#6234#7241#0" expanded="false" />
-            <element signature="e#7291#7390#0" expanded="false" />
-            <element signature="e#7443#7856#0" expanded="false" />
-            <element signature="e#7909#8263#0" expanded="false" />
-            <element signature="e#8314#9081#0" expanded="false" />
-            <element signature="e#9135#9818#0" expanded="false" />
-            <element signature="e#9872#10854#0" expanded="false" />
-            <element signature="e#10908#11604#0" expanded="false" />
-            <element signature="e#10957#11582#0" expanded="false" />
-            <element signature="e#11656#11933#0" expanded="false" />
-            <element signature="e#11987#12668#0" expanded="false" />
-            <element signature="e#12722#13071#0" expanded="false" />
-            <element signature="e#13123#14234#0" expanded="false" />
-            <element signature="e#14293#14687#0" expanded="false" />
-            <element signature="e#14746#15100#0" expanded="false" />
-            <element signature="e#15157#15994#0" expanded="false" />
-            <element signature="e#16048#16437#0" expanded="false" />
-            <element signature="e#16491#16840#0" expanded="false" />
-            <element signature="e#16892#17717#0" expanded="false" />
-            <element signature="e#17774#18016#0" expanded="false" />
-            <element signature="e#18073#18425#0" expanded="false" />
-            <element signature="e#18480#19619#0" expanded="false" />
-            <element signature="e#19671#20464#0" expanded="false" />
-            <element signature="e#20514#20892#0" expanded="false" />
-            <element signature="e#20944#23524#0" expanded="false" />
-            <marker date="1513158074572" expanded="true" signature="1982:2038" ph="SELECT `valu... yii_dictionary" />
-            <marker date="1513158074572" expanded="true" signature="7655:7729" ph="SELECT `valu... yii_dictionary" />
-            <marker date="1513158074572" expanded="true" signature="12385:12441" ph="SELECT `valu... yii_dictionary" />
-            <marker date="1513158074572" expanded="true" signature="12481:12541" ph="SELECT `valu... yii_dictionary" />
-            <marker date="1513158074572" expanded="true" signature="14504:14560" ph="SELECT `valu... yii_dictionary" />
-            <marker date="1513158074572" expanded="true" signature="16254:16310" ph="SELECT `valu... yii_dictionary" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,19 +763,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="2354" lean-forward="false" selection-start-line="6" selection-start-column="2354" selection-end-line="6" selection-end-column="2354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Blog/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yii/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1472">
+          <caret line="92" column="16" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/collection/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/essay/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="111" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/feedback/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
+          <folding>
+            <element signature="e#551#759#0" expanded="false" />
+            <element signature="e#773#871#0" expanded="false" />
+            <element signature="e#1091#1490#0" expanded="false" />
+            <element signature="e#1554#1768#0" expanded="false" />
+            <element signature="e#1820#2148#0" expanded="false" />
+            <element signature="e#2198#2247#0" expanded="false" />
+            <element signature="e#2294#2425#0" expanded="false" />
+            <element signature="e#3236#3316#0" expanded="false" />
+            <element signature="e#3363#3426#0" expanded="false" />
+            <element signature="e#3473#3518#0" expanded="false" />
+            <element signature="e#3570#3955#0" expanded="false" />
+            <element signature="e#4007#4057#0" expanded="false" />
+            <element signature="e#4114#4395#0" expanded="false" />
+            <element signature="e#4445#4493#0" expanded="false" />
+            <element signature="e#4548#4724#0" expanded="false" />
+            <element signature="e#4771#4816#0" expanded="false" />
+            <element signature="e#4868#5151#0" expanded="false" />
+            <element signature="e#5197#5259#0" expanded="false" />
+            <element signature="e#5310#5602#0" expanded="false" />
+            <element signature="e#5649#5711#0" expanded="false" />
+            <element signature="e#6245#7252#0" expanded="false" />
+            <element signature="e#7302#7401#0" expanded="false" />
+            <element signature="e#7454#7867#0" expanded="false" />
+            <element signature="e#7920#8274#0" expanded="false" />
+            <element signature="e#8325#9092#0" expanded="false" />
+            <element signature="e#9146#9829#0" expanded="false" />
+            <element signature="e#9883#10865#0" expanded="false" />
+            <element signature="e#10919#11615#0" expanded="false" />
+            <element signature="e#10968#11593#0" expanded="false" />
+            <element signature="e#11667#11944#0" expanded="false" />
+            <element signature="e#11998#12679#0" expanded="false" />
+            <element signature="e#12733#13082#0" expanded="false" />
+            <element signature="e#13134#14245#0" expanded="false" />
+            <element signature="e#14304#14698#0" expanded="false" />
+            <element signature="e#14757#15111#0" expanded="false" />
+            <element signature="e#15168#16005#0" expanded="false" />
+            <element signature="e#16059#16448#0" expanded="false" />
+            <element signature="e#16502#16851#0" expanded="false" />
+            <element signature="e#16903#17728#0" expanded="false" />
+            <element signature="e#17785#18027#0" expanded="false" />
+            <element signature="e#18084#18436#0" expanded="false" />
+            <element signature="e#18491#19630#0" expanded="false" />
+            <element signature="e#19682#20475#0" expanded="false" />
+            <element signature="e#20525#20903#0" expanded="false" />
+            <element signature="e#20955#23535#0" expanded="false" />
+            <marker date="1513317998900" expanded="true" signature="1982:2038" ph="SELECT `valu... yii_dictionary" />
+            <marker date="1513317998900" expanded="true" signature="7666:7740" ph="SELECT `valu... yii_dictionary" />
+            <marker date="1513317998900" expanded="true" signature="12396:12452" ph="SELECT `valu... yii_dictionary" />
+            <marker date="1513317998900" expanded="true" signature="12492:12552" ph="SELECT `valu... yii_dictionary" />
+            <marker date="1513317998900" expanded="true" signature="14515:14571" ph="SELECT `valu... yii_dictionary" />
+            <marker date="1513317998900" expanded="true" signature="16265:16321" ph="SELECT `valu... yii_dictionary" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/essay/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
@@ -883,13 +890,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/common/header.html">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+        <state relative-caret-position="-938">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#header#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#article#2;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
