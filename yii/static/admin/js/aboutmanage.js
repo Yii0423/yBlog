@@ -21,6 +21,7 @@ $(function () {
                 {field: 'title', title: '标题', width: 250},
                 {field: 'type', title: '类型', width: 150, sort: true},
                 {field: 'url', title: '链接', width: 300},
+                {field: 'sort', title: '排序', width: 80, sort: true},
                 {field: 'content', title: '描述', width: 500},
                 {field: 'create', title: '创建时间', width: 200, sort: true},
                 {field: 'modify', title: '修改时间', width: 200, sort: true}
