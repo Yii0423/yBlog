@@ -51,6 +51,9 @@ def getJRTTNews():
         if 'label' in news:
             labels = ','.join(news['label'])
         try:
+            detail = getJRTTNewsDetail('https://www.toutiao.com' + news['source_url'])
+            imagesurl = detail[0] if detail[0] else news['middle_image']
+
             objJRTT = Essay()
             objJRTT.categoryid = 2
             objJRTT.typeid = 13
@@ -59,10 +62,10 @@ def getJRTTNews():
             objJRTT.seokeywords = labels
             objJRTT.seodescription = news['abstract']
             objJRTT.sources = '今日头条'
-            objJRTT.imagesurl = news['middle_image']
+            objJRTT.imagesurl = imagesurl
             objJRTT.filesurl = ''
             objJRTT.sort = int(round(time.time()))
-            objJRTT.remarks = getJRTTNewsDetail('https://www.toutiao.com' + news['source_url'])
+            objJRTT.remarks = detail[1]
             resultJRTT.append(objJRTT)
         except BaseException as ex:
             pass
@@ -72,10 +75,14 @@ def getJRTTNews():
 # 今日头条新闻详情
 def getJRTTNewsDetail(url):
     bsJRTTDetails = BeautifulSoup(requests.get(url, headers=headers).content, 'html.parser')
-    return HTMLParser().unescape(
+    content = HTMLParser().unescape(
         re.findall(r"content: '.*?'", str(bsJRTTDetails.contents[1]))[0].replace('content: \'', '').rstrip('\'')) \
-           + "<p><a target=\"_blank\" href=\"" + url + "\"><span><small>* 转载自今日头条，点击跳转至原文链接</small>" \
-                                                       "</span></a></p> "
+              + "<p><a target=\"_blank\" href=\"" + url + "\"><span><small>* 转载自今日头条，点击跳转至原文链接</small>" \
+                                                          "</span></a></p> "
+    img = HTMLParser().unescape(
+        re.findall(r"img src&#x3D;&quot;.*?&quot;", str(bsJRTTDetails.contents[1]))[0]
+            .replace('img src&#x3D;&quot;', '').replace('&quot;', '').rstrip('\''))
+    return [img, content]
 
 
 # 网易新闻(随笔-门户新闻)

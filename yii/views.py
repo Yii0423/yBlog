@@ -71,7 +71,8 @@ def webs(request, type='', id=''):
                 data = {'list': About.objects.filter(isdel=False).order_by('-sort')}
                 break
         if type == '':
-            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), isdel=False).order_by('-create')[:10]
+            data['index_essay'] = Essay.objects.filter(~Q(typeid=16), ~Q(categoryid=2), isdel=False).order_by(
+                '-create')[:10]
         # 页头数据
         data['index_about'] = Index.objects.get(pk=1)
         # 页脚数据
