@@ -1,15 +1,16 @@
 import json
-import time
 import re
+import time
 from html.parser import HTMLParser
+
 import requests
 from bs4 import BeautifulSoup
 
 from yii.models import Essay
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 '
-                  'Safari/537.36'}
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  'Chrome/61.0.3163.100 Safari/537.36'}
 
 proxies = {}
 
@@ -40,8 +41,10 @@ def getIp(func):
 # 今日头条(随笔-门户新闻)
 def getJRTTNews():
     resultJRTT = []
-    urlJRTT = 'https://www.toutiao.com/api/pc/feed/?category=internet'
-    bsJRTT = BeautifulSoup(requests.get(urlJRTT).content, 'html.parser')
+    urlJRTT = 'https://www.toutiao.com/api/pc/feed/?category=internet&utm_source=toutiao&widen=1&max_behot_time=0' \
+              '&max_behot_time_tmp=0&tadrequire=true&as=A1952AC482838EA&cp=5A4233B88E2A9E1' \
+              '&_signature=2U4VlgAAgxNcsr.N.9i64NlOFY'
+    bsJRTT = BeautifulSoup(requests.get(urlJRTT, headers=headers).content, 'html.parser')
     listJRTT = list(json.loads(str(bsJRTT))['data'])
     for news in listJRTT:
         labels = ''
