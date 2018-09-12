@@ -1,0 +1,29 @@
+body {
+    position: absolute;
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+.canvas-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.box {
+    position: absolute;
+    z-index: 10;
+    color: #fff;
+    font-family: Arial;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.htmleaf-container {
+    margin: 80px 100px 80px 135px;
+}

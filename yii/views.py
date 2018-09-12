@@ -35,10 +35,18 @@ def toJson(data, page, limit):
 
 # 前台
 def webs(request, type='', id=''):
-    url = 'index.html'
+    url = 'recall.html'
     data = {}
     try:
         for case in switch(type):
+            if case(''):
+                url = 'recall.html'
+                dlist = Recall.objects.filter(isdel=False).order_by('-create')
+                data = {'list': dlist}
+                break
+            if case('index'):
+                url = 'index.html'
+                break
             if case('essay') and not id.isdigit():
                 if not id:
                     id = 'news'
@@ -70,7 +78,7 @@ def webs(request, type='', id=''):
                 url = 'about/index.html'
                 data = {'list': About.objects.filter(isdel=False).order_by('-sort')}
                 break
-        if type == '':
+        if type == 'index':
             data['index_essay'] = Essay.objects.filter(~Q(typeid=16), ~Q(categoryid=2), isdel=False).order_by(
                 '-create')[:10]
         # 页头数据
@@ -85,8 +93,8 @@ def webs(request, type='', id=''):
 
 
 # 后台
-def admin(request, type='admin', id=-1):
-    url = 'index.html'
+def admin(request, type='', id=-1):
+    url = 'recall.html'
     model = ''
     data = {}
     try:
@@ -95,7 +103,8 @@ def admin(request, type='admin', id=-1):
                 url = 'login.html'
                 request.session.clear()
                 break
-            if case('admin'):
+            if case('blog'):
+                url = 'index.html'
                 data = {'model': Index.objects.get(pk=1)}
                 break
             if case('essay'):
@@ -490,6 +499,22 @@ def api(request, type='login'):
                         obj.ip = str(model['ip'])
                         obj.save()
                         result = json.dumps({"result": result, "change": change})
+                break
+            if case('edit_recall'):
+                if request.method == 'POST':
+                    model = request.POST['model']
+                    model = json.JSONDecoder().decode(model)
+                    imgs = [x for x in model['imagesurls'].split(',') if x]
+                    for index, imgurl in enumerate([(os.path.dirname(__file__) + x) for x in imgs]):
+                        MakeThumb(imgurl)
+                        bigurl = imgs[index]
+                        smallurl = bigurl.replace('autouploads/big', 'autouploads/small')
+                        obj = Recall()
+                        obj.title = model['title']
+                        obj.smallurl = smallurl
+                        obj.bigurl = bigurl
+                        obj.save()
+                    result = json.dumps({"result": "success"})
                 break
     except BaseException as ex:
         result = json.dumps({"result": ex.args})

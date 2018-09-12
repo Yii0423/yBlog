@@ -81,7 +81,7 @@ def getJRTTNewsDetail(url):
                                                           "</span></a></p> "
     img = HTMLParser().unescape(
         re.findall(r"img src&#x3D;&quot;.*?&quot;", str(bsJRTTDetails.contents[1]))[0]
-            .replace('img src&#x3D;&quot;', '').replace('&quot;', '').rstrip('\''))
+        .replace('img src&#x3D;&quot;', '').replace('&quot;', '').rstrip('\''))
     return [img, content]
 
 

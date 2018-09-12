@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{ data.index_about.description }}">
+    <meta name="keywords" content="{{ data.index_about.keywords }}">
+    <meta name="author" content="yii">
+    <title>{{ data.index_about.title }}</title>
+    {% load static %}
+    <link href="{% static 'recall/css/normalize.css' %}" rel="stylesheet"/>
+    <link href="{% static 'recall/css/photopile.css' %}" rel="stylesheet"/>
+    <link href="{% static 'recall/css/demo.css' %}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="canvas-box">
+    <canvas id="canvas">你的浏览器不支持canvas</canvas>
+</div>
+
+
+<div class="htmleaf-container">
+    <div class="photopile-wrapper">
+        <ul class="photopile">
+            {% for model in data.list %}
+                <li>
+                    <a href="{{ model.bigurl }}">
+                        <img src="{{ model.smallurl }}" alt="{{ model.title }}"/>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script src="{% static 'recall/js/jquery-1.11.0.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'recall/js/jquery-ui.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'recall/js/jquery.ui.touch-punch.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'recall/js/photopile.js' %}" type="text/javascript"></script>
+<script src="{% static 'recall/js/recall.js' %}" type="text/javascript"></script>
+
+</body>
+
+</html>

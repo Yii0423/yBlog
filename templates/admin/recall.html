@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>yii's blog 后台 - 回忆首页</title>
+    {% include 'admin/common/static.html' %}
+    <script type="text/javascript">
+        $(function () {
+            layui.use(['form', 'layedit', 'upload'], function () {
+                var form = layui.form, upload = layui.upload;
+                //BANNERS上传
+                upload.render({
+                    elem: '#btnUploadss2',
+                    url: '/admin/api/upload_files/?dir=/static/uploadfiles/autouploads/big',
+                    multiple: true,
+                    before: function () {
+                        $('#btnSubmint').attr('disabled', true).addClass('layui-btn-disabled');
+                        $('textarea[name="imagesurls"]').val('');
+                    },
+                    done: function (res) {
+                        $('textarea[name="imagesurls"]').val($('textarea[name="imagesurls"]').val()
+                        + ',' + res['data']['src']);
+                    },
+                    allDone: function () {
+                        $('#btnSubmint').attr('disabled', false).removeClass('layui-btn-disabled');
+                    }
+                });
+                //表单提交
+                form.on('submit(formDemo)', function (data) {
+                    $(this).pag_edit({
+                        type: 'post',
+                        url_edit: '/admin/api/edit_recall/',
+                        params: {'model': JSON.stringify(data.field)}
+                    });
+                    window.location.reload();
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+{% include 'admin/common/header.html' %}
+<div class="layui-fluid layui-clear" style="margin-top:30px">
+    <div class="layui-row">
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12">
+            <div class="box box-primary">
+                <div class="box-header">
+                </div>
+                <div class="box-body">
+                    <form class="layui-form layui-form-pane layui-container" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">*回忆说明</label>
+
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required lay-verify="required"
+                                       placeholder="请输入回忆说明(如：2018年08月08日拍摄于杭州绍兴仓桥直街)"
+                                       autocomplete="off" autofocus class="layui-input"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">*回忆图片</label>
+
+                            <div class="layui-input-block">
+                                <textarea name="imagesurls" required lay-verify="required"
+                                          placeholder="请输入回忆图片链接(多个以,隔开)"
+                                          class="layui-textarea" rows="15"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button id="btnUploadss2" class="layui-btn layui-btn-normal" type="button">多图上传</button>
+                                <button class="layui-btn" lay-submit lay-filter="formDemo" id="btnSubmint"
+                                        style="float:right;margin-right:110px">
+                                    立即提交
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

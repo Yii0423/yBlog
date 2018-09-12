@@ -141,3 +141,13 @@ class AgreeLog(models.Model):
     status = models.IntegerField('结果0-默认1-顶2-踩', default=0)
     create = models.DateTimeField('创建时间', auto_now_add=True)
     modify = models.DateTimeField('修改时间', auto_now=True)
+
+
+# 回忆表
+class Recall(models.Model):
+    title = models.CharField('说明', max_length=250, default='')
+    smallurl = models.CharField('图片缩略图', max_length=500, default='')
+    bigurl = models.CharField('图片', max_length=500, default='')
+    create = models.DateTimeField('创建时间', auto_now_add=True)
+    modify = models.DateTimeField('修改时间', auto_now=True)
+    isdel = models.BooleanField('是否删除', default=False)
